@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.5.3a-b.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+</head>
+
+<body>
+    <button id="showmodal1">Показать модальное окно</button>
+
+    <div id="wrap1" class="wrap hidden">
+        <span id="close1">&times;</span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt nobis dolorum molestiae saepe libero repudiandae magnam, quae excepturi. Optio commodi dolorum, ullam harum assumenda explicabo exercitationem est soluta id.
+    </div>
+
+    <script>
+        const modal = document.querySelector('#wrap1');
+        const closeBtn = document.querySelector('#close1');
+        const showBtn = document.querySelector('#showmodal1');
+
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('animate__fadeInLeft');
+            modal.classList.add('animate__fadeOutLeft');
+            setTimeout(function() {
+                modal.classList.add('hidden');
+            }, 1000);
+        });
+
+        showBtn.addEventListener('click', function() {
+            modal.classList.remove('animate__fadeOutLeft', 'hidden');
+            modal.classList.add('animate__animated', 'animate__fadeInLeft');
+        });
+
+    </script>
+</body>
+
+</html>
